@@ -14,19 +14,11 @@ function Contact() {
     const [lnameAlert, setLNameAlert] = useState(false)
     const [emailAlert, setEmailAlert] = useState(false);
     const [phonenoAlert, setPhoneNoAlert] = useState(false);
-    const navigate = useNavigate()
+   
     const localData = JSON.parse(localStorage.getItem("myList")) || []
     function handleSubmit(e) {
         e.preventDefault();
-        // const nameRegixExpression = /^[a-zA-Z]+[- ']{0,1}[a-zA-Z]+$/;
-        // const lnameRegixExpression = /^[a-zA-Z]+[- ']{0,1}[a-zA-Z]+$/;
-        // const emailRegixExpression = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-        // const phoneNumberRegixExpression = /^[0]?[789]\d{9}$/;
-        // if (
-        //     emailRegixExpression.test(emailCapture) &&
-        //     phoneNumberRegixExpression.test(numberCapture) &&
-        //     nameRegixExpression.test(nameCapture) && lnameRegixExpression.test(lastnameCapture)
-        // ) {
+        
             let mydata = {
                 fname: nameCapture,
                 lname: lastnameCapture,
@@ -36,8 +28,12 @@ function Contact() {
             const data = localData.push(mydata)
             localStorage.setItem("myList", JSON.stringify(localData));
             console.log(mydata);
-            navigate("/")
-        // }
+            alert('Submitted succesfully go back to home page')
+            setLastNameCapture('')
+            setLastNameCapture('')
+            setEmailCapture('')
+            setNumberCapture('')
+        
     }
 
     function nameValidation(e) {
@@ -93,7 +89,7 @@ function Contact() {
                     <label>LastName</label><CustomInput type={'text'} customCss={style.inpfields} handleOnChange={(e) => lnameValidation(e)} /> <p style={{color:'red'}}>{lnameAlert ? "enter valid lastname" : ""}</p>
                     <label>Email</label> <CustomInput type={'email'} customCss={style.inpfields} handleOnChange={(e) => emailValidation(e)} /> <p style={{color:'red'}}>{emailAlert ? "enter valid email" : ""}</p>
                     <label>PhoneNo</label><CustomInput type={'text'} customCss={style.inpfields} handleOnChange={(e) => phoneNumber(e)} /> <p style={{color:'red'}}>{phonenoAlert ? "enter valid Number add zero in starting" : ""}</p>
-                    <CustomButton handleOnClick={handleSubmit} text={'Submit'}/>
+                    <CustomButton customCss={style.butn} handleOnClick={handleSubmit} text={'Submit'}/>
                 </div>
             </form>
         </>

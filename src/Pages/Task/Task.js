@@ -5,14 +5,17 @@ import CustomInput from '../../Atoms/CustomInput'
 import CustomButton from '../../Atoms/CustomButton'
 function Task() {
     const [value,setValue]=useState('')
-    const[isedit,setIsEdit]=useState(false)
+    const[isedit,setIsEdit]=useState('')
     const [data,setData]=useState([{
-        task:'complete the Project',
+        task:'compete',
         id:Math.random()*20,
+        isUpdated:false
     },
     {
-        task:'Learn about Project',
+        task:'Acquire',
         id:Math.random()*20,
+        isUpdated:false
+
     }
 
 ])
@@ -21,6 +24,7 @@ function handleAdd(){
     {
         task:value,
         id:Math.random()*20,
+        isUpdated:false
     },
     ])
     // setValue('')
@@ -30,9 +34,16 @@ function handleDelete(x){
     setData(deletedItem)
 }
 function handleEdit(x,value){
-    if(value===""){
-        alert('please update or cancel')
-    }
+    x.isUpdated = true
+    setData([...data])
+}
+function handleEditDone(i){
+    data.splice(i,1, {
+        task:isedit,
+        id:Math.random()*20,
+        isUpdated:false
+    })
+    setData([...data])
 }
   return (
     <>
@@ -48,9 +59,11 @@ function handleEdit(x,value){
         data.map((x,i)=>{
             return(
                 <div key={i} className={style.todo}>
-                    <h3>{x.task}</h3>
-                    <CustomButton customCss={style.btn} handleOnClick={()=>handleEdit(x,value)} text={'Edit'}/>
+                    {x.isUpdated?<CustomInput handleOnChange={(e)=>setIsEdit(e.target.value)}/>:
+                    <h3 >{x.task}</h3>}
+
                     <CustomButton customCss={style.btn} handleOnClick={()=>handleDelete(x)} text={'Delete'}/>
+                  {x.isUpdated?<CustomButton handleOnClick={()=>handleEditDone(i)} text={'EditDone'}/>: <CustomButton customCss={style.btn} handleOnClick={()=>handleEdit(x,value)} text={'Edit'}/>}
                 </div>
             )
         })
