@@ -1,8 +1,9 @@
 import React from 'react'
 import style from './Task.module.css'
+import Navbar from '../../Components/Navbar'
 function Task() {
   return (
-    <div>Task</div>
+    <div><Navbar/></div>
   )
 }
 
