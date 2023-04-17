@@ -1,11 +1,10 @@
 //Passing this button component as a props
 
 import React from 'react'
-
-function CustomButton({handleOnClick,text}) {
+function CustomButton({handleOnClick,text,customCss}) {
   return (
     <>
-    <button onClick={handleOnClick}>{text}</button>
+    <button className={customCss} onClick={handleOnClick}>{text}</button>
     </>
   )
 }

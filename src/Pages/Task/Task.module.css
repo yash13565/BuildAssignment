@@ -1,0 +1,35 @@
+.todo{
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    margin-top: 1.5rem;
+    background-color: lightblue;
+    
+  
+}
+.inputfields{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+.inputtask{
+    width: 15rem ;
+    background-color: blanchedalmond;
+}
+.btn{
+    border-radius: 6px;
+    width: 4rem;
+    background-color: goldenrod;
+    border: none;
+    color: white;
+    height: 2rem;
+    margin-left: 2rem;
+    
+}
+.addbtn{
+    height: 1.5rem;
+    width: 5rem;
+    border: none;
+    border-radius: 4px;
+    background-color: lightgray;
+}

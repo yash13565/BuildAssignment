@@ -1,0 +1,20 @@
+.maincont{
+    background-color: rgb(194, 205, 228);
+    height:30rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    box-shadow: 0px 0px 5px 3px black;
+    width: 30rem;
+    margin: auto;
+    margin-top: 8rem;
+    border-radius: 10px;
+}
+.inpfields{
+    height: 1.8rem;
+    width: 15rem;
+    border: none;
+    border-radius: 5px;
+}

@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom'
 function Navbar() {
   return (
     <div className={style.mainnav}>
-       <span><Link to='/'><GiMoebiusTriangle/></Link></span>
-       <Link to='/'>Home</Link>
-       <Link to='/contact'>Contact</Link>
-       <Link to='/task'>Task</Link>
+       <Link  className={style.navigation} to='/'><GiMoebiusTriangle/></Link>
+       <Link className={style.navigation}  to='/'>Home</Link>
+       <Link  className={style.navigation} to='/contact'>Contact</Link>
+       <Link  className={style.navigation} to='/task'>Task</Link>
     </div>
   )
 }

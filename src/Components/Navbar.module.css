@@ -1,0 +1,13 @@
+.mainnav{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: black;
+    height: 2.6rem;
+    align-items: center;
+    font-size: 1.2rem;
+    width: 100%;
+}
+.navigation{
+    color: white;
+    text-decoration: none;
+}

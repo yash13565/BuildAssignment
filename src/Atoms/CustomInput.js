@@ -3,10 +3,10 @@
 
 import React from 'react'
 
-function CustomInput({handleOnChange}) {
+function CustomInput({handleOnChange,customCss,type}) {
   return (
     <>
-   <input onChange={handleOnChange}/> 
+   <input type={type} onChange={handleOnChange} className={customCss}/> 
     </>
   )
 }
