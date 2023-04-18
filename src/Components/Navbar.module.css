@@ -7,7 +7,32 @@
     font-size: 1.2rem;
     width: 100%;
 }
+.mainnavs{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: black;
+    height: 2.6rem;
+    align-items: center;
+    font-size: 1.2rem;
+    width: 100%;
+}
 .navigation{
     color: white;
     text-decoration: none;
 }
+.hamburger{
+    color:white;
+    font-size: 1.5rem;
+    display: none;
+}
+/* @media screen and (max-width:550px) {
+    .hamburger{
+        display: unset;
+    }
+    .mainnavs{
+        display: none;
+    }
+    .mainnav{
+        justify-content: space-between;
+    }
+} */

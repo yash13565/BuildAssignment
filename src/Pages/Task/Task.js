@@ -27,7 +27,7 @@ function handleAdd(){
         isUpdated:false
     },
     ])
-    // setValue('')
+
 }
 function handleDelete(x){
     const deletedItem=data.filter((e)=>e.id!==x.id)
